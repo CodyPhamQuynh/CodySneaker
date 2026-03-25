@@ -1,0 +1,641 @@
+/* --- CƠ BẢN & RESET --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fef6e4;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1750px; /* Nới rộng khung để chứa đủ giao diện to */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- HEADER STYLE --- */
+header {
+  padding: 20px 0; /* Thu nhỏ khoảng cách trên dưới một chút */
+}
+
+.page-sanpham .header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 1px; /* Tạo khoảng cách an toàn giữa các khối */
+}
+
+.page-trangchu .header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 1px; /* Tạo khoảng cách an toàn giữa các khối */
+}
+
+.logo img {
+  height: 200px; /* Đã thu nhỏ Logo lại một chút để nhường chỗ cho Menu */
+  width: auto;
+  object-fit: contain;
+}
+
+.logo1 img {
+  height: 40px; /* Thu nhỏ icon giỏ hàng */
+  width: 40px;
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* 1. Kéo toàn bộ menu dồn sang bên trái */
+}
+
+nav ul {
+  display: flex;
+  gap: 30px; /* Dùng vw để khoảng cách Menu TỰ ĐỘNG THU HẸP khi màn hình nhỏ */
+  justify-content: flex-start;
+  margin-right: 20px;
+}
+
+nav a {
+  font-family: "Crimson Text";
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 45px; /* Giảm chiều cao thanh tìm kiếm */
+}
+
+.search-bar input {
+  border: none;
+  padding: 10px 15px;
+  font-family: "Crimson Text", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px; /* Giảm font-size chữ tìm kiếm */
+  width: 200px; /* Thu ngắn thanh tìm kiếm lại (từ 280px xuống 200px) */
+}
+
+.search-bar button {
+  background-color: #2563eb;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.header-icons img {
+  cursor: pointer;
+}
+
+/* --- HERO SECTION STYLE --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* --- PHẦN BỌC NGOÀI (NỀN MÀU BE) --- */
+.content-wrapper {
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* --- DÀN HÀNG NGANG (SẢN PHẨM & FOOTER) --- */
+.content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap; /* BẮT BUỘC CÓ: Tự động xuống hàng nếu màn hình không đủ độ rộng */}
+
+/* --- FEATURED PRODUCTS SECTION --- */
+.featured-products {
+  flex: 1; /*Cho phép phần sản phẩm chiếm không gian linh hoạt */
+  text-align: center;
+}
+
+.featured-products h1 {
+  font-family: "Crimson Text";
+  font-weight: 400;
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.products-header h1{
+  font-family: "Crimson Text", cursive;
+  font-weight: 400;
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.product-grid {
+  display: flex;
+  gap: 15px; /* Giảm khoảng cách để vừa trên một hàng */
+  justify-content: center;
+}
+
+.product-item {
+  width: 30%;
+  text-align: center;
+}
+
+.product-img-wrapper {
+  background-color: #fff; /* Nền trắng cho ảnh giày */
+  /* Nếu ảnh giày đã có sẵn form như hình, bạn có thể tắt viền (border) ở đây */
+}
+
+.product-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- FOOTER STYLE --- */
+footer {
+  flex: 1; /* Cho phép Footer tự động co giãn thay vì fix cứng 750px */
+  min-width: 600px; /* Giữ form không bị bóp quá nhỏ */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  border: 7px solid #f1cd89;
+  padding: 30px 20px;
+  margin-top: 80px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.footer-col h3 {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-size: 26px; /* Chỉnh nhỏ lại một chút để vừa khung */
+  color: #000000;
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
+
+.footer-contact ul li {
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.footer-policies ul li {
+  margin-bottom: 10px;
+}
+
+.footer-policies {
+  margin-left: 40px;
+}
+
+.footer-policies a {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+  font-size: 28px;
+}
+
+/* ========================================================= */
+/* ================ CSS CHO TRANG SẢN PHẨM ================= */
+/* ========================================================= */
+
+/* Màu nền tổng thể của trang sản phẩm */
+.page-sanpham {
+  padding-top: 20px;
+}
+
+.shop-container {
+  padding-left: 100px;
+  padding-right: 100px;
+  
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  color: #333;
+}
+
+/* --- Layout chính (Sidebar + Products) --- */
+.shop-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* ================= BỘ LỌC (SIDEBAR) ================= */
+.sidebar {
+  width: 280px; /* Chiều rộng cột trái */
+  flex-shrink: 0;
+}
+
+.filter-box {
+  background-color: #fff;
+  padding: 25px;
+  margin-bottom: 10px;
+  /* Box shadow nhẹ nếu muốn nổi bật, ở thiết kế có vẻ phẳng nên bỏ qua */
+}
+
+.filter-title {
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.filter-content {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.filter-content label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.filter-content input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Chia cột trong checkbox */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-4-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.filter-list label {
+  margin-bottom: 20px;
+}
+
+/* ================= LƯỚI SẢN PHẨM ================= */
+.products-area {
+  flex: 1; /* Chiếm phần không gian còn lại */
+  margin-top: -115px;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+}
+
+.sort-options {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-options select {
+  padding: 8px 15px;
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  border: 1px solid #333;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Lưới 5 cột bằng CSS Grid */
+.product-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 cột bằng nhau */
+  gap: 15px; /* Khoảng cách giữa các sản phẩm */
+  margin-top: -18px;
+}
+
+/* --- Card Sản Phẩm --- */
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Ảnh không bị méo và hiển thị đầy đủ */
+}
+
+/* Badges (Nhãn dán góc trái) */
+.badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.badge {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+.badge.discount {
+  background-color: #e11d48; /* Màu đỏ */
+}
+
+.badge.new {
+  background-color: #16a34a; /* Màu xanh lá */
+}
+
+/* Nút thêm vào giỏ hàng (góc phải dưới của ảnh) */
+.add-to-cart-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #3b82f6; /* Màu xanh dương */
+  color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Thông tin Text */
+.product-info {
+  text-align: left;
+}
+
+.product-price {
+  font-family: Crimson Text, sans-serif;
+  font-size: 13px;
+}
+
+.current-price {
+  color: #e11d48; /* Giá đỏ */
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.old-price {
+  color: #999;
+  text-decoration: line-through; /* Gạch ngang giá cũ */
+}
+
+/* ========================================================= */
+/* ================= CSS CHO TRANG GIỎ HÀNG ================ */
+/* ========================================================= */
+
+.page-cart {
+    background-color: #fef6e4;
+}
+
+/* --- Header Giỏ Hàng --- */
+.cart-header {
+    background-color: #fef6e4;
+    padding: 20px 0;
+}
+
+.cart-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-title {
+    font-family: "Crimson Text", serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #000;
+    flex: 1;
+    margin-left: 60px; /* Đẩy chữ cách xa Logo một chút */
+    text-transform: uppercase;
+}
+
+.cart-search-bar {
+    display: flex;
+    border: 2px solid #2563eb; /* Viền xanh dương */
+    background-color: #fff;
+    height: 55px;
+    width: 380px;
+}
+
+.cart-search-bar button {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    width: 70px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.cart-search-bar input {
+    border: none;
+    padding: 0 20px;
+    font-family: "Crimson Text", serif;
+    font-style: italic;
+    font-size: 20px;
+    flex: 1;
+    outline: none;
+}
+
+/* --- Nội Dung Giỏ Hàng --- */
+.cart-main {
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+/* Thiết lập lưới chung cho cả phần Tiêu đề và Sản phẩm */
+.cart-row {
+    display: grid;
+    /* Tỷ lệ chia: Cột SP to nhất (4 phần), 3 cột tiếp theo bằng nhau (1.5 phần), cột cuối nhỏ nhất (1 phần) */
+    grid-template-columns: 4fr 1.5fr 1.5fr 1.5fr 1fr; 
+    align-items: center;
+    background-color: #fff;
+    padding: 25px 40px;
+    margin-bottom: 20px; /* Tạo khoảng trống lộ nền màu be */
+    font-family: "Crimson Text", serif;
+    font-size: 20px;
+    color: #000;
+}
+
+/* Dòng tiêu đề không có bóng, chữ mỏng hơn */
+.cart-heading {
+    font-size: 22px;
+    font-weight: bold;
+
+}
+
+/* Định dạng từng cột */
+.cart-col-product {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Tăng kích thước ô Checkbox */
+.cart-col-product input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+.cart-img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.cart-name {
+    max-width: 300px; /* Ép chữ xuống dòng nếu quá dài */
+    line-height: 1.5;
+}
+
+.cart-col-price, .cart-col-total, .cart-col-action {
+    text-align: center;
+}
+
+.cart-col-quantity {
+    display: flex;
+    justify-content: center;
+}
+
+/* Nút tăng giảm số lượng */
+.qty-control {
+    display: flex;
+    border: 1px solid #999;
+}
+
+.qty-btn {
+    background: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.qty-btn:hover {
+    background: #f0f0f0;
+}
+
+.qty-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    font-family: "Crimson Text", serif;
+    font-size: 20px;
+}
+
+/* Nút Xóa */
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Crimson Text", serif;
+    font-size: 20px;
+    color: #000;
+}
+
+.btn-delete:hover {
+    color: #e11d48; /* Đổi màu đỏ khi di chuột vào */
+    text-decoration: underline;
+}
